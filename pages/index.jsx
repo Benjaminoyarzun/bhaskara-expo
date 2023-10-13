@@ -1,3 +1,5 @@
+/** @format */
+
 import DefaultLayout from "@/layouts/default";
 import { ChatBox } from "../components/chat-box";
 import { useState } from "react";
@@ -18,11 +20,11 @@ export default function IndexPage() {
   const [resutaldo, setResultado] = useState(0);
   const [valorDelta, setDelta] = useState(0);
 
-  function calcularDelta(a: number, b: number, c: number): number {
+  function calcularDelta(a, b, c) {
     return b * b - 4 * a * c;
   }
 
-  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleOnChange = (e) => {
     setInputs({ ...inputs, [e.target.name]: e.target.value });
     if (e.target.name === "A") {
       setA(e.target.value);
@@ -44,7 +46,7 @@ export default function IndexPage() {
         text: "Ingrese todos los campos",
       });
       return;
-    } else if (stateA == 0) {
+    } else if (Number(stateA) == 0) {
       Swal.fire({
         icon: "warning",
         title: "¡Cuidado!",
@@ -120,17 +122,17 @@ export default function IndexPage() {
   return (
     <DefaultLayout>
       {/*------------------------------ Section Proyecto ---------------------------------*/}
-      <section id="Proyecto" className="flex justify-center items-center mt-10">
-        <div className="  grid md:col-span-1">
+      <section id='Proyecto' className='flex justify-center items-center mt-10'>
+        <div className='  grid md:col-span-1'>
           <div className="w-full min-h-[295px] min-w-[430px] relative bg-no-repeat bg-cover  mx-auto bg-[url('/img/back.jpg')] rounded-xl overflow-hidden">
-            <div className="flex">
-              <div className="p-8">
-                <div className="uppercase tracking-wide text-sm text-white font-semibold">
+            <div className='flex'>
+              <div className='p-8'>
+                <div className='uppercase tracking-wide text-sm text-white font-semibold'>
                   <h3>Sobre la exposicion</h3>
                 </div>
               </div>
             </div>
-            <div className="absolute left-0 right-0 p-4 mb-5 justify-center ml-2  max-h-32 overflow-y-scroll text-white">
+            <div className='absolute left-0 right-0 p-4 mb-5 justify-center ml-2  max-h-32 overflow-y-scroll text-white'>
               <p>
                 Esta exposicion surge con el fin de ayudar a alumnos que tengan
                 dudas con el area de las ecuaciones cuadraticas, en la seccion
@@ -142,52 +144,51 @@ export default function IndexPage() {
       </section>
       {/*------------------------------Section de Calculadora de Bhaskara--------------------------------*/}
       <section
-        id="inicio"
-        className="flex justify-center items-center w-screen h-screen  "
-      >
-        <div className=" grid grid-cols-1 gap-y-4 p-5 sm:w-5/6 md:w-4/6 bg-transparent border">
-          <div className="w-full flex justify-center">
-            <h2 className=" pt-5 text-white ">Calculadora de Bhaskara</h2>
+        id='inicio'
+        className='flex justify-center items-center w-screen h-screen  '>
+        <div className=' grid grid-cols-1 gap-y-4 p-5 sm:w-5/6 md:w-4/6 bg-transparent border'>
+          <div className='w-full flex justify-center'>
+            <h2 className=' pt-5 text-white '>Calculadora de Bhaskara</h2>
           </div>
-          <div className="w-full">
+          <div className='w-full'>
             <Divider />
           </div>
-          <div className="w-full md:flex  sm:grid sm:grid-cols-1 md:justify-center md:gap-10">
-            <div className=" sm:w-full mb-5 md:w-auto">
+          <div className='w-full md:flex  sm:grid sm:grid-cols-1 md:justify-center md:gap-10'>
+            <div className=' sm:w-full mb-5 md:w-auto'>
               <input
-                placeholder="Ingrese el valor de A"
-                type="text"
-                variant="bordered"
-                name="A"
-                className=" text-white bg-transparent w-full h-full align-middle p-1  border border-gray-800 rounded-3xl focus:border-none hover:border-blue-500 "
-                id="stateA"
+                placeholder='Ingrese el valor de A'
+                type='text'
+                variant='bordered'
+                name='A'
+                className=' text-white bg-transparent w-full h-full align-middle p-1  border border-gray-800 rounded-3xl focus:border-none hover:border-blue-500 '
+                id='stateA'
                 value={inputs.A}
                 onChange={(e) => {
                   handleOnChange(e);
                 }}
               />
             </div>
-            <div className=" sm:w-full mb-5 md:w-auto">
+            <div className=' sm:w-full mb-5 md:w-auto'>
               <input
-                placeholder="Ingrese el valor de B"
-                type="text"
-                variant="bordered"
-                name="B"
-                className="text-white bg-transparent w-full h-full align-middle p-1  border border-gray-800 rounded-3xl focus:border-none hover:border-blue-500 "
-                id="stateB"
+                placeholder='Ingrese el valor de B'
+                type='text'
+                variant='bordered'
+                name='B'
+                className='text-white bg-transparent w-full h-full align-middle p-1  border border-gray-800 rounded-3xl focus:border-none hover:border-blue-500 '
+                id='stateB'
                 value={inputs.B}
                 onChange={(e) => {
                   handleOnChange(e);
                 }}
               />
             </div>
-            <div className=" sm:w-full mb-5 md:w-auto">
+            <div className=' sm:w-full mb-5 md:w-auto'>
               <input
-                placeholder="Ingrese el valor de C"
-                type="text"
-                className="text-white bg-transparent w-full h-full align-middle p-1  border border-gray-800 rounded-3xl focus:border-none hover:border-blue-500 "
-                name="C"
-                id="stateC"
+                placeholder='Ingrese el valor de C'
+                type='text'
+                className='text-white bg-transparent w-full h-full align-middle p-1  border border-gray-800 rounded-3xl focus:border-none hover:border-blue-500 '
+                name='C'
+                id='stateC'
                 value={inputs.C}
                 onChange={(e) => {
                   handleOnChange(e);
@@ -195,21 +196,19 @@ export default function IndexPage() {
               />
             </div>
           </div>
-          <div className="grid grid-cols-1">
-            <div className=" flex justify-center ">
-              <div className="w-full flex justify-center">
+          <div className='grid grid-cols-1'>
+            <div className=' flex justify-center '>
+              <div className='w-full flex justify-center'>
                 <button
-                  className="bg-[#20613f] rounded-3xl  w-auto p-2 text-white"
-                  onClick={() => handleSubmit2()}
-                >
+                  className='bg-[#20613f] rounded-3xl  w-auto p-2 text-white'
+                  onClick={() => handleSubmit2()}>
                   Mandar
                 </button>
               </div>
-              <div className="w-full flex justify-center">
+              <div className='w-full flex justify-center'>
                 <button
-                  className="bg-[#eb636b] rounded-3xl  w-auto p-2 text-white"
-                  onClick={() => limpiar()}
-                >
+                  className='bg-[#eb636b] rounded-3xl  w-auto p-2 text-white'
+                  onClick={() => limpiar()}>
                   limpiar
                 </button>
               </div>
@@ -217,36 +216,32 @@ export default function IndexPage() {
           </div>
           <Divider />
 
-          <div className="w-full flex justify-center mb-5 ">
+          <div className='w-full flex justify-center mb-5 '>
             <Accordion
               showDivider={true}
-              className=" flex bg-[#20613f] flex-col text-white   gap-1 w-full max-w-[300px] "
-              variant="shadow"
-            >
+              className=' flex bg-[#20613f] flex-col text-white   gap-1 w-full max-w-[300px] '
+              variant='shadow'>
               <AccordionItem
-                key="1"
-                aria-label="Connected devices"
-                title="Valor de X1"
-                className=" text-white"
-              >
+                key='1'
+                aria-label='Connected devices'
+                title='Valor de X1'
+                className=' text-white'>
                 <h3>
                   El valor de X1 es: {resutaldo.resAi} {resutaldo.resA}
                 </h3>
               </AccordionItem>
               <AccordionItem
-                key="2"
-                aria-label="Apps Permissions"
-                title="Valor de X2"
-              >
+                key='2'
+                aria-label='Apps Permissions'
+                title='Valor de X2'>
                 <h3>
                   El valor de X2 es: {resutaldo.resBi} {resutaldo.resB}
                 </h3>
               </AccordionItem>
               <AccordionItem
-                key="3"
-                aria-label="Pending tasks"
-                title="Valor del discriminante"
-              >
+                key='3'
+                aria-label='Pending tasks'
+                title='Valor del discriminante'>
                 <h3>El valor del discriminante es: {valorDelta} </h3>
               </AccordionItem>
             </Accordion>
@@ -259,18 +254,18 @@ export default function IndexPage() {
         <Cards />
       </section>
       {/*------------------------------Section de Chat y video--------------------------------*/}
-      <div className="w-full flex justify-center mt-20 mb-20 ">
-        <h2 className="text-6xl" id="chat">
+      <div className='w-full flex justify-center mt-20 mb-20 '>
+        <h2 className='text-6xl' id='chat'>
           Chatea con un Matematico
         </h2>
       </div>
-      <section id="Explicacion" className="grid grid-cols-1 mx-auto w-full">
-        <div className="flex justify-center w-full">
-          <div className="w-4/6">
+      <section id='Explicacion' className='grid grid-cols-1 mx-auto w-full'>
+        <div className='flex justify-center w-full'>
+          <div className='w-4/6'>
             <div>
               <Bhaskara />
             </div>
-            <div className="mt-10">
+            <div className='mt-10'>
               <ChatBox />
             </div>
           </div>
